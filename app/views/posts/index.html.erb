@@ -3,6 +3,7 @@
   <tr>
     <td><%= post.content %></td>
     <td><%= link_to "編集する", edit_post_path(post.id) %></td>
+    <td><%= link_to "消す", post_path(post.id), method: :delete %></td>
   </tr>
   <br>
 <% end %>
