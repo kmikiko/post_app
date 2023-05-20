@@ -2,6 +2,7 @@
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.content %></td>
+    <td><%= link_to "編集する", edit_post_path(post.id) %></td>
   </tr>
   <br>
 <% end %>

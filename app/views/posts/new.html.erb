@@ -1,7 +1,2 @@
-<%= form_with(model: @post, local: true) do |form| %>
-  <div class="post_content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  <%= form.submit %>
-<% end %>
+<h3>つぶやきましょう！</h3>
+<%= render 'form' %>
