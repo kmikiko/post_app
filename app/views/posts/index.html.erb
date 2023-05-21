@@ -1,12 +1,17 @@
-<h3>わたしのつぶやき</h3>
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.content %></td>
-    <td><%= link_to "編集する", edit_post_path(post.id) %></td>
-    <td><%= link_to "消す", post_path(post.id), method: :delete %></td>
-  </tr>
-  <br>
-<% end %>
-<br>
-<%= link_to 'つぶやく', new_post_path %>
+<body>
+  <header>わたしのつぶやき</header>
+  <article>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.content %></td>
+        <td class = btn><%= link_to "edit", edit_post_path(post.id) %></td>
+        <td class = btn><%= link_to "delete", post_path(post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' }%></td>
+      </tr>
+      <br>
+    <% end %>
+    <br>
+    <%= link_to 'つぶやく', new_post_path %>
+  </article>
+  <footer></footer>
+</body>
 

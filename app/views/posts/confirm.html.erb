@@ -1,10 +1,14 @@
-<h3>内容を確認してください。</h3>
-
-<%= form_with(model: @post, local: true) do |form| %>
-  <%= form.hidden_field :content %>
-  <p><%= @post.content %></p>
-  <%= form.submit  "つぶやく" %>
-  <%= form.submit "戻る", name: 'back' %>
-<% end %>
-
+<body>
+  <header>内容を確認してください。</header>
+  <article>
+    <%= form_with(model: @post, local: true) do |form| %>
+      <%= form.hidden_field :content %>
+      <p><%= @post.content %></p>
+      <%= form.submit  "つぶやく" %>
+      <%= form.submit "戻る", name: 'back' %>
+    <% end %>
+  </article>
+  <footer>
+  </footer>
+</body>
 

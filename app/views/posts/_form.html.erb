@@ -1,19 +1,23 @@
-<%= form_with(model: @post, local: true ,url: choose_new_or_edit ) do |form| %>
- <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @post.errors.count %>件のエラー</h2>
-      <ul>
+<div class = form>
+  <%= form_with(model: @post, local: true ,url: choose_new_or_edit ) do |form| %>
+    
+    <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <p><%= @post.errors.count %>件のエラー</p>
+        <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <div class="post_content">
+      <%= form.label :content , "つぶやき"%>
+      <%= form.text_field :content %>
     </div>
+
+    <%= form.submit "POST"%>  
+
   <% end %>
-<div class="post_content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-  <%= form.submit %>
-  
-<% end %>
+</div>
