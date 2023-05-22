@@ -5,9 +5,9 @@
       <div id="error_explanation">
         <p><%= @post.errors.count %>件のエラー</p>
         <ul>
-        <% @post.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
+          <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
         </ul>
       </div>
     <% end %>
